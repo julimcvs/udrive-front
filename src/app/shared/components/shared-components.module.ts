@@ -4,6 +4,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {CommonModule} from '@angular/common';
 import {HeaderComponent} from './header/header.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {HeaderComponent} from './header/header.component';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    CommonModule
+    CommonModule,
+    MatProgressBarModule,
   ],
   providers: [],
   exports: [

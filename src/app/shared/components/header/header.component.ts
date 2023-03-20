@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
@@ -6,13 +6,24 @@ import {Router} from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
   @Input() title = '';
   @Input() canGoBack = false;
   @Input() goBackRoute = '';
   @Input() isProfile = false;
+  @Input() numberOfSteps = 1;
+  @Input() currentStep = 0;
+  progressValue = 0;
+
+  ngOnInit(): void {
+    this.calculateProgress();
+  }
 
   constructor(private router: Router) {
+  }
+
+  calculateProgress(): void {
+    this.progressValue = (this.currentStep / this.numberOfSteps) * 100;
   }
 
   goToProfile(): void {
