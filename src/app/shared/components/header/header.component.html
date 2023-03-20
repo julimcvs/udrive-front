@@ -2,7 +2,7 @@
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <ng-container *ngIf="canGoBack">
-        <button (click)="goBack()" mat-icon-button>
+        <button mat-mini-fab color="primary" (click)="goBack()">
           <mat-icon>arrow_back</mat-icon>
         </button>
       </ng-container>
@@ -10,10 +10,13 @@
       <span>{{title}}</span>
       <span class="example-spacer"></span>
       <ng-container *ngIf="!isProfile">
-        <button (click)="goToProfile()" mat-icon-button>
+        <button mat-mini-fab color="primary" (click)="goToProfile()">
           <mat-icon>person</mat-icon>
         </button>
       </ng-container>
     </mat-toolbar-row>
   </mat-toolbar>
+  <div>
+      <mat-progress-bar color="accent" mode="determinate" [value]="70"></mat-progress-bar>
+  </div>
 </ng-container>

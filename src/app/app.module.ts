@@ -7,6 +7,7 @@ import {SharedComponentsModule} from './shared/components/shared-components.modu
 import {AppMainComponent} from './app-main.component';
 import {HttpClientModule} from '@angular/common/http';
 import {TestService} from './pages/user/test/test.service';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {TestService} from './pages/user/test/test.service';
     BrowserAnimationsModule,
     SharedComponentsModule,
     HttpClientModule,
+    MatButtonModule
   ],
   providers: [TestService],
   bootstrap: [AppComponent]
