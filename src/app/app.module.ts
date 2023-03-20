@@ -1,18 +1,26 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {SharedComponentsModule} from './shared/components/shared-components.module';
+import {AppMainComponent} from './app-main.component';
+import {HttpClientModule} from '@angular/common/http';
+import {TestService} from './pages/user/test/test.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppMainComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    SharedComponentsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [TestService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -1,0 +1,19 @@
+<ng-container>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <ng-container *ngIf="canGoBack">
+        <button (click)="goBack()" mat-icon-button>
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+      </ng-container>
+      <span class="example-spacer"></span>
+      <span>{{title}}</span>
+      <span class="example-spacer"></span>
+      <ng-container *ngIf="!isProfile">
+        <button (click)="goToProfile()" mat-icon-button>
+          <mat-icon>person</mat-icon>
+        </button>
+      </ng-container>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</ng-container>
