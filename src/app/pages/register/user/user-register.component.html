@@ -1,0 +1,97 @@
+<div class="toolbar">
+  <u-header
+    [canGoBack]="true"
+    [isProfile]="true"
+    title="Cadastro de usuário"></u-header>
+</div>
+<div class="section center-align">
+  <form [formGroup]="form">
+    <div class="container">
+      <div class="row"  style="display: inline-block">
+  <h3 class="grey-text">Para se cadastrar, informe os seguintes dados</h3>
+  <div class="row s12">
+    <mat-form-field appearance="outline" color="primary" style="width: 100%">
+      <mat-label>Nome de Usuário</mat-label>
+      <input
+        [required]="true"
+        formControlName="fullName"
+        matInput maxlength="100"
+        type="text">
+    </mat-form-field>
+  </div>
+  <div class="row s12 input-field">
+    <mat-form-field appearance="outline" color="primary" style="width: 100%">
+      <mat-label>Universidade</mat-label>
+      <mat-select formControlName="university">
+        <mat-option *ngFor="let university of universities"
+                [value]="university.id"
+                    style="height: 48px">
+          {{university.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="row s12">
+    <mat-form-field appearance="outline" color="primary" style="width: 100%">
+      <mat-label>Número de matrícula</mat-label>
+      <input
+        [required]="true"
+        type="text"
+        formControlName="registrationNumber"
+        matInput
+        maxlength="20">
+    </mat-form-field>
+  </div>
+  <div class="row s12">
+    <mat-form-field appearance="outline" color="primary" style="width: 100%">
+      <mat-label>CPF</mat-label>
+      <input
+        [required]="true"
+        placeholder="XXX.XXX.XXX-XX"
+        type="text"
+        formControlName="cpf"
+        matInput
+        minlength="11"
+        maxlength="11">
+    </mat-form-field>
+  </div>
+  <div class="row s12">
+    <mat-form-field appearance="outline" color="primary" style="width: 100%">
+      <mat-label>Email</mat-label>
+      <input
+        [required]="true"
+        placeholder="email@email.com"
+        type="email"
+        formControlName="email"
+        matInput
+        matTooltip="Informe um email válido!"
+        maxlength="100">
+    </mat-form-field>
+  </div>
+  <div class="row s12">
+    <mat-form-field appearance="outline" color="primary" style="width: 100%">
+      <mat-label>Telefone de contato</mat-label>
+      <input
+        [required]="true"
+        placeholder="(XX) XXXXX-XXXX"
+        type="text"
+        formControlName="phoneNumber"
+        matInput
+        minlength="10"
+        maxlength="11">
+    </mat-form-field>
+  </div>
+  <div class="row s12">
+    <button
+      (click)="register()"
+      [matRippleCentered]="true"
+      color="primary"
+      mat-flat-button
+      matRipple style="width: 100%; height: 50px">
+      <mat-label>Cadastrar</mat-label>
+    </button>
+  </div>
+      </div>
+    </div>
+  </form>
+</div>

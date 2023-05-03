@@ -9,14 +9,14 @@
       <span class="example-spacer"></span>
       <span>{{title}}</span>
       <span class="example-spacer"></span>
-      <ng-container *ngIf="!isProfile">
-        <button mat-mini-fab color="primary" (click)="goToProfile()">
+      <ng-container *ngIf="isProfile">
+        <button mat-icon-button color="accent" (click)="goToProfile()">
           <mat-icon>person</mat-icon>
         </button>
       </ng-container>
     </mat-toolbar-row>
   </mat-toolbar>
   <div>
-      <mat-progress-bar color="accent" mode="determinate" [value]="70"></mat-progress-bar>
+      <mat-progress-bar color="accent" mode="determinate" [value]="progressValue"></mat-progress-bar>
   </div>
 </ng-container>

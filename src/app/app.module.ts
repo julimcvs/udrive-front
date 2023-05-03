@@ -5,9 +5,10 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SharedComponentsModule} from './shared/components/shared-components.module';
 import {AppMainComponent} from './app-main.component';
-import {HttpClientModule} from '@angular/common/http';
-import {TestService} from './pages/user/test/test.service';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {MatButtonModule} from '@angular/material/button';
+import {TokenInterceptor} from "./shared/services/interceptors/token.interceptor";
+import {AppService} from "./shared/services/app.service";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,10 @@ import {MatButtonModule} from '@angular/material/button';
     HttpClientModule,
     MatButtonModule
   ],
-  providers: [TestService],
+  providers: [
+    AppService,
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

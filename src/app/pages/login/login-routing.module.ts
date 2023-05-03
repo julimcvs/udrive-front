@@ -1,15 +1,15 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {Constants} from '../../../shared/utils/constants';
-import {TestComponent} from './test.component';
+import {Constants} from "../../shared/utils/constants";
+import {LoginComponent} from "./login.component";
 
 const routes: Routes = [
-  {path: Constants.ROUTES.ROOT, component: TestComponent},
+  {path: Constants.ROUTES.ROOT, component: LoginComponent},
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TestRoutingModule {
+export class LoginRoutingModule {
 }
